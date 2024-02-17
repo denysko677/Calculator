@@ -1,5 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLineEdit
+from PyQt5.QtGui import QFont, QColor, QPalette
+from PyQt5.QtCore import Qt
 
 
 class CalculatorApp(QWidget):
@@ -10,9 +12,11 @@ class CalculatorApp(QWidget):
         self.setGeometry(100, 100, 300, 400)
 
         self.layout = QVBoxLayout()
+        self.setStyleSheet("background-color: #f0f0f0;")
 
         self.display = QLineEdit()
         self.display.setFixedHeight(50)
+        self.display.setFont(QFont("Arial", 16))
         self.layout.addWidget(self.display)
 
         buttons = [
@@ -27,6 +31,9 @@ class CalculatorApp(QWidget):
             for button_text in row:
                 button = QPushButton(button_text)
                 button.clicked.connect(self.on_button_click)
+                button.setFixedSize(60, 60)
+                button.setFont(QFont("Arial", 12))
+                button.setStyleSheet("background-color: #ffffff; color: #000000;")
                 h_layout.addWidget(button)
             self.layout.addLayout(h_layout)
 
