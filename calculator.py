@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLineEdit
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLineEdit
 
 
 class CalculatorApp(QWidget):
@@ -53,4 +53,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     calculator = CalculatorApp()
     calculator.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
